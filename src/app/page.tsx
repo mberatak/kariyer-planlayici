@@ -43,9 +43,9 @@ const features = [
 const previewAreas = areas.slice(0, 6);
 
 const successStories = [
-  { emoji: '🚀', quote: 'Testten sonra DevOps alanına yönlendim. 6 ayda iş buldum!', name: 'Furkan Y.', year: '3. Sınıf CS' },
-  { emoji: '🤖', quote: 'AI/ML\'i kafamda reddediyordum. Platform ikna etti, çok doğruymuş.', name: 'Selin A.', year: 'YL Öğrencisi' },
-  { emoji: '🎮', quote: 'Oyun dev alanında Türkiye maaş datası bulamıyordum. Burada buldum.', name: 'Arda K.', year: '2. Sınıf' },
+  { emoji: '🚀', quote: 'Dünya sadece gömülü yazılımdan ibaret değilmiş!', name: 'Furkan S.', year: '3. Sınıf CENG' },
+  { emoji: '🤖', quote: 'Backend alanı acaba bana uygun mu diye düşünüyordum. Testten sonra backend alanına yönlendim.', name: 'Ahmet Faruk T.', year: '3. Sınıf CENG' },
+  { emoji: '🎮', quote: 'Bu site sayesinde web alanına yöneldim. İyi ki varsın!', name: 'Alperen A.', year: '3. Sınıf ITS' },
 ];
 
 export default function HomePage() {
@@ -193,13 +193,12 @@ export default function HomePage() {
                 <div className="flex items-start justify-between mb-4">
                   <div className="text-4xl">{area.emoji}</div>
                   <span
-                    className={`text-xs font-semibold px-2.5 py-1 rounded-full ${
-                      area.difficulty === 'Kolay'
-                        ? 'bg-mint/15 text-mint'
-                        : area.difficulty === 'Orta'
+                    className={`text-xs font-semibold px-2.5 py-1 rounded-full ${area.difficulty === 'Kolay'
+                      ? 'bg-mint/15 text-mint'
+                      : area.difficulty === 'Orta'
                         ? 'bg-amber-custom/15 text-amber-custom'
                         : 'bg-coral/15 text-coral'
-                    }`}
+                      }`}
                   >
                     {area.difficulty}
                   </span>
