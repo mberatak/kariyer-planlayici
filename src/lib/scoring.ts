@@ -36,10 +36,19 @@ export function calculateScores(
     if (range === 0) {
       normalized[areaId] = 50;
     } else {
-      const pct = ((score - min) / range) * 100;
-      // Apply a mild boost: compress scaling so top areas are clearly differentiated
-      normalized[areaId] = Math.round(Math.max(5, Math.min(100, pct)));
+      // Calculate relative score (0 to 1)
+      const relative = (score - min) / range;
+      
+      // Apply a power curve (e.g., x^1.5) to push down lower matches 
+      // and create a steeper drop-off from the top result
+      const curved = Math.pow(relative, 1.5);
+      
+      const pct = curved * 100;
+      
+      // Ensure a reasonable floor for visibility, and cap at 100
+      normalized[areaId] = Math.round(Math.max(2, Math.min(100, pct)));
     }
+
   }
 
   return normalized;
