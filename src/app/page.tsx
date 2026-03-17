@@ -12,40 +12,40 @@ const stats = [
 const features = [
   {
     icon: Zap,
-    title: 'Anında Sonuç',
-    desc: '10 soruda güçlü alanlarını öğren. 5 dakika, tam yön.',
-    color: 'text-violet',
-    bg: 'bg-violet/10',
+    title: "Anında Sonuç",
+    desc: "10 soruda güçlü alanlarını öğren. 5 dakika, tam yön.",
+    color: "text-violet",
+    bg: "bg-violet/10",
   },
   {
     icon: TrendingUp,
-    title: 'Kariyer Yolu',
-    desc: 'Junior\'dan CTO\'ya kadar her adım için roadmap.',
-    color: 'text-coral',
-    bg: 'bg-coral/10',
+    title: "Kariyer Yolu",
+    desc: "Junior'dan CTO'ya kadar her adım için roadmap.",
+    color: "text-coral",
+    bg: "bg-coral/10",
   },
   {
     icon: BookOpen,
-    title: 'Öğrenme Rehberi',
-    desc: 'Ücretsiz kurslar, kitaplar ve mini proje fikirleri.',
-    color: 'text-mint',
-    bg: 'bg-mint/10',
+    title: "Öğrenme Rehberi",
+    desc: "Ücretsiz kurslar, kitaplar ve mini proje fikirleri.",
+    color: "text-mint",
+    bg: "bg-mint/10",
   },
   {
     icon: Shield,
-    title: 'Türkiye Odaklı',
-    desc: 'Güncel maaş verileri, şirketler ve staj imkanları.',
-    color: 'text-amber-custom',
-    bg: 'bg-amber-custom/10',
+    title: "Türkiye Odaklı",
+    desc: "Güncel maaş verileri, şirketler ve staj imkanları.",
+    color: "text-amber-custom",
+    bg: "bg-amber-custom/10",
   },
 ];
 
 const previewAreas = areas.slice(0, 6);
 
 const successStories = [
-  { emoji: '🚀', quote: 'Dünya sadece gömülü yazılımdan ibaret değilmiş!', name: 'Furkan S.', year: '3. Sınıf CENG' },
-  { emoji: '🤖', quote: 'Backend alanı acaba bana uygun mu diye düşünüyordum. Testten sonra backend alanına yönlendim.', name: 'Ahmet Faruk T.', year: '3. Sınıf CENG' },
-  { emoji: '🎮', quote: 'Bu site sayesinde web alanına yöneldim. İyi ki varsın!', name: 'Alperen A.', year: '3. Sınıf ITS' },
+  { emoji: "🚀", quote: "Dünya sadece gömülü yazılımdan ibaret değilmiş!", name: "Furkan S.", year: "3. Sınıf CENG" },
+  { emoji: "🤖", quote: "Backend alanı acaba bana uygun mu diye düşünüyordum. Testten sonra backend alanına yönlendim.", name: "Ahmet Faruk T.", year: "3. Sınıf CENG" },
+  { emoji: "🎮", quote: "Bu site sayesinde web alanına yöneldim. İyi ki varsın!", name: "Alperen A.", year: "3. Sınıf ITS" },
 ];
 
 export default function HomePage() {
@@ -65,13 +65,13 @@ export default function HomePage() {
             {/* Pill badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet/10 border border-violet/20 text-violet text-sm font-medium mb-8 animate-fade-in">
               <span className="w-2 h-2 bg-violet rounded-full animate-pulse" />
-              Türkiye'nin İlk Yazılım Kariyer Rehberi
+              {"Türkiye'nin İlk Yazılım Kariyer Rehberi"}
             </div>
 
             {/* Headline */}
             <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6 animate-slide-up text-balance">
-              Yazılımda{' '}
-              <span className="gradient-text">alanın</span>{' '}
+              {"Yazılımda "}
+              <span className="gradient-text">alanın</span>{" "}
               ne olmalı?
             </h1>
 
@@ -236,7 +236,7 @@ export default function HomePage() {
             {successStories.map((s, i) => (
               <div key={i} className="glass-card rounded-2xl p-7 hover:border-white/15 transition-all">
                 <div className="text-4xl mb-5">{s.emoji}</div>
-                <p className="text-white/80 leading-relaxed mb-6 italic">"{s.quote}"</p>
+                <p className="text-white/80 leading-relaxed mb-6 italic">{"`" + s.quote + "`"}</p>
                 <div>
                   <div className="font-semibold text-sm">{s.name}</div>
                   <div className="text-white/40 text-xs">{s.year}</div>
