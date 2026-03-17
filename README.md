@@ -1,4 +1,4 @@
-# Alanım Ne? 🧭
+**i vibecoded ts for my friends**
 
 **Türkiye'deki yazılım ve bilgisayar mühendisliği öğrencileri için kişiselleştirilmiş kariyer yönlendirme platformu.**
 
@@ -90,7 +90,3 @@ npm run build
 # Vercel'e deploy (önerilen)
 npx vercel --prod
 ```
-
-## 📄 Lisans
-
-MIT License — Türkiye yazılım öğrencileri için ❤️
