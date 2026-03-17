@@ -7,10 +7,10 @@ export const detailedQuestions: Question[] = [
     text: 'Algoritma ve veri yapıları konularını nasıl buluyorsun?',
     category: 'technical',
     options: [
-      { label: 'A', text: 'Çok seviyorum, mükemmel olana kadar optimize ederim', weights: { 'ai-ml': 2, 'software-architecture': 2, 'data-engineering': 1, 'embedded': 2 } },
-      { label: 'B', text: 'İyi anlıyorum, ihtiyaç olunca kullanırım', weights: { 'web-dev': 1, 'mobile': 1, 'cybersecurity': 1, 'devops': 1 } },
-      { label: 'C', text: 'Yeterince anlıyorum', weights: { 'qa-testing': 1, 'product': 1, 'web-dev': 1 } },
-      { label: 'D', text: 'Zor geliyor, pratik odaklı ilerim', weights: { 'product': 2, 'qa-testing': 1, 'game-dev': 1 } },
+      { label: 'A', text: 'Çok seviyorum, mükemmel olana kadar optimize ederim', weights: { 'ai-ml': 3, 'software-architecture': 3, 'embedded': 2 } },
+      { label: 'B', text: 'İyi anlıyorum, ihtiyaç olunca kullanırım', weights: { 'web-dev': 1, 'mobile': 1, 'devops': 1 } },
+      { label: 'C', text: 'Yeterince anlıyorum', weights: { 'qa-testing': 1, 'product': 1 } },
+      { label: 'D', text: 'Zor geliyor, pratik odaklı ilerim', weights: { 'product': 3, 'qa-testing': 1 } },
     ],
   },
   {
@@ -114,10 +114,10 @@ export const detailedQuestions: Question[] = [
     text: 'Bir grupta rolün genellikle ne olur?',
     category: 'social',
     options: [
-      { label: 'A', text: 'Fikir üreten, yön gösteren', weights: { 'product': 3, 'software-architecture': 2, 'game-dev': 1 } },
-      { label: 'B', text: 'Teknik problemi çözmeye odaklanan', weights: { 'ai-ml': 2, 'embedded': 2, 'cybersecurity': 2, 'data-engineering': 1 } },
-      { label: 'C', text: 'Uyum sağlayan, destekleyen', weights: { 'qa-testing': 2, 'devops': 1, 'web-dev': 1 } },
-      { label: 'D', text: 'İletişimi sağlayan köprü', weights: { 'product': 3, 'qa-testing': 2 } },
+      { label: 'A', text: 'Fikir üreten, yön gösteren', weights: { 'product': 4, 'software-architecture': 2 } },
+      { label: 'B', text: 'Teknik problemi çözmeye odaklanan', weights: { 'ai-ml': 2, 'embedded': 3, 'cybersecurity': 3 } },
+      { label: 'C', text: 'Uyum sağlayan, destekleyen', weights: { 'qa-testing': 3, 'devops': 1 } },
+      { label: 'D', text: 'İletişimi sağlayan köprü', weights: { 'product': 4, 'qa-testing': 3 } },
     ],
   },
   {
