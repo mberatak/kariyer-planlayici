@@ -261,4 +261,107 @@ export const quickQuestions: Question[] = [
       },
     ],
   },
+  {
+    id: 11,
+    text: 'Büyük datasetlerle çalışmak seni nasıl hissettiriyor?',
+    category: 'technical',
+    options: [
+      {
+        label: 'A',
+        text: 'Heyecanlandırıyor! Analiz etmek istiyorum',
+        weights: { 'data-science': 3, 'ai-ml': 2, 'data-engineering': 3 },
+      },
+      {
+        label: 'B',
+        text: 'İlgi çekici ama çok teknik geliyor',
+        weights: { 'ai-ml': 1, 'devops': 2, 'product': 1 },
+      },
+      {
+        label: 'C',
+        text: 'İlgimi çekmiyor',
+        weights: { 'web-dev': 1, 'mobile': 1, 'game-dev': 2, 'cybersecurity': 1 },
+      },
+    ],
+  },
+  {
+    id: 12,
+    text: 'Bir uygulama için hangi kısım seni en çok motive ediyor?',
+    category: 'motivation',
+    options: [
+      {
+        label: 'A',
+        text: 'Kullanıcı arayüzü ve deneyimi geliştirmek',
+        weights: { 'web-dev': 3, 'mobile': 3, 'product': 2 },
+      },
+      {
+        label: 'B',
+        text: 'Altyapı, hız ve ölçeklenebilirlik',
+        weights: { 'devops': 3, 'software-architecture': 3, 'data-engineering': 1 },
+      },
+      {
+        label: 'C',
+        text: 'Veriden akıl çekmek ve tahminler yapmak',
+        weights: { 'ai-ml': 3, 'data-science': 3 },
+      },
+      {
+        label: 'D',
+        text: 'Sistemin güvenli ve sağlam olmasını sağlamak',
+        weights: { 'cybersecurity': 3, 'qa-testing': 2, 'embedded': 1 },
+      },
+    ],
+  },
+  {
+    id: 13,
+    text: 'Hangi teknoloji stack seni en çok çekiyor?',
+    category: 'technical',
+    options: [
+      {
+        label: 'A',
+        text: 'JavaScript, React, Node.js (modern web)',
+        weights: { 'web-dev': 4, 'mobile': 1 },
+      },
+      {
+        label: 'B',
+        text: 'Python ve makine öğrenmesi kütüphaneleri',
+        weights: { 'ai-ml': 4, 'data-science': 3, 'data-engineering': 1 },
+      },
+      {
+        label: 'C',
+        text: 'Sistem dilleri (C, C++, Rust)',
+        weights: { 'embedded': 3, 'cybersecurity': 2, 'software-architecture': 1 },
+      },
+      {
+        label: 'D',
+        text: 'Farketmez, konsepti anlayan geliştirim',
+        weights: { 'product': 2, 'qa-testing': 2, 'devops': 2 },
+      },
+    ],
+  },
+  {
+    id: 14,
+    text: 'Uzun müddetli kariyer vizyonun?',
+    category: 'motivation',
+    options: [
+      {
+        label: 'A',
+        text: 'Girişimci: kendi ürünü yapmak',
+        weights: { 'product': 3, 'web-dev': 2, 'mobile': 2, 'ai-ml': 1 },
+      },
+      {
+        label: 'B',
+        text: 'Uzman: bir alanda derinleşmek (Principal Engineer)',
+        weights: { 'software-architecture': 3, 'ai-ml': 2, 'data-engineering': 2, 'cybersecurity': 2 },
+      },
+      {
+        label: 'C',
+        text: 'Lider: takım ve proje yönetimi',
+        weights: { 'product': 3, 'devops': 1, 'software-architecture': 2 },
+      },
+      {
+        label: 'D',
+        text: 'Henüz bilmiyorum, keşfetmek istiyorum',
+        weights: { 'web-dev': 1, 'mobile': 1, 'game-dev': 1, 'qa-testing': 1 },
+      },
+    ],
+  },
 ];

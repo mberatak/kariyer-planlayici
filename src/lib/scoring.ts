@@ -25,30 +25,41 @@ export function calculateScores(
     }
   }
 
-  // Normalize: find min/max and scale to 0-100
+  // Normalize using z-score (mean-centered) instead of min-max
+  // This prevents inflating scores for everyone
   const values = Object.values(rawScores);
-  const min = Math.min(...values);
-  const max = Math.max(...values);
-  const range = max - min;
+  const mean = values.reduce((a, b) => a + b, 0) / values.length;
+  const variance = values.reduce((sum, v) => sum + Math.pow(v - mean, 2), 0) / values.length;
+  const stdDev = Math.sqrt(variance);
 
   const normalized: Record<string, number> = {};
+  
   for (const [areaId, score] of Object.entries(rawScores)) {
-    if (range === 0) {
-      normalized[areaId] = 50;
+    let normalized_score: number;
+    
+    if (stdDev === 0) {
+      // All scores are equal
+      normalized_score = 50;
     } else {
-      // Calculate relative score (0 to 1)
-      const relative = (score - min) / range;
+      // Calculate z-score: (score - mean) / stdDev
+      const zscore = (score - mean) / stdDev;
       
-      // Apply a power curve (e.g., x^1.5) to push down lower matches 
-      // and create a steeper drop-off from the top result
-      const curved = Math.pow(relative, 1.5);
+      // Convert z-score to 0-100 range using sigmoid-like transformation
+      // This centers around 50, with more spread for differentiation
+      // Formula: 50 + (20 * zscore) gives roughly 10-90 range for +/- 2 std deviations
+      let pct = 50 + (16 * zscore);
       
-      const pct = curved * 100;
+      // Apply a mild power curve for extra differentiation at extremes
+      const relative = (pct - 10) / 80; // normalize to 0-1 range (keeping 10-90 bounds)
+      if (relative > 0) {
+        pct = 10 + 80 * Math.pow(relative, 1.8);
+      }
       
-      // Ensure a reasonable floor for visibility, and cap at 100
-      normalized[areaId] = Math.round(Math.max(2, Math.min(100, pct)));
+      normalized_score = pct;
     }
-
+    
+    // Ensure reasonable bounds: 5-95 (not 0-100, to avoid false certainty)
+    normalized[areaId] = Math.round(Math.max(5, Math.min(95, normalized_score)));
   }
 
   return normalized;
